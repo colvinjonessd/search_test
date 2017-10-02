@@ -5,7 +5,7 @@ import glob
 import datetime
 import pdb
 import unittest
-from filesearch_sol import filesearch_sol, count_keyword_files, main
+from filesearch_sol import filesearch, count_keyword_files, main
 
 # Part 1
 # creates random number of files (no more than 30) in the root dir with random number of keywords

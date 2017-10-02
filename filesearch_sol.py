@@ -8,8 +8,8 @@ import numpy as npy
 import pdb
 
 #user prompt input
-root_dir = raw_input('Enter Root directory:')
-keyword = raw_input('Enter keyword: ')
+root_dir = input('Enter Root directory:')
+keyword = input('Enter keyword: ')
 
 #command line args
 #root_dir = sys.argv[1]
@@ -43,7 +43,7 @@ def FileSearch(curr_dir, exp):
 output = {}
 #recursively walk through all dirs & call FileSearch for each subdir
 for root, dirs, files in os.walk(root_dir):
-	output[root] = FileSearch(root, keyword)
+	output[root] = FileSearch( root, keyword)
 #output array of all the data
 print ("output")
 
