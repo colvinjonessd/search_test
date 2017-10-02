@@ -5,15 +5,16 @@ import glob
 import datetime
 import pdb
 import unittest
+from filesearch_sol import filesearch_sol, count_keyword_files, main
 
 # Part 1
 # creates random number of files (no more than 30) in the root dir with random number of keywords
-basename = "test"
+basename = ""
 suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
 
-root_dir = "/Users"
-os.chdir("/Users/solo")
-keyword1 = "test"
+root_dir = ""
+os.chdir("")
+keyword1 = ""
 keyword2 = ""
 keyword3 = ""
 

@@ -12,7 +12,7 @@ and counts the number of files for that sub dir'''
 Keywords_list = ['^[a-zA-Z]+_TESTResult.*', 'abc', 'abcd']
 Amount_files = [0, 0, 0]
 print("List of files in the root dir:")
-for file in os.listdir('/Users/solo/Documents/Coding Test'):
+for file in os.listdir():
     print(file)
     with open(file) as f:
         data = f.readlines()
@@ -34,7 +34,7 @@ print("Keyword 2 (abc) in ", Amount_files[1], " files present")
 print("Keyword 3 (abcd) in ", Amount_files[2], " files present")
 print('\n')
 input("Press Enter to clear ...")
-files = glob.glob('/Users/solo/Documents')
+files = glob.glob('')
 for f in files:
     os.remove(f)
 input("All files in work directory have been deleted. Press Enter to exit...")

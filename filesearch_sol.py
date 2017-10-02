@@ -1,16 +1,13 @@
-#!/usr/bin/python2.7
-import pdb
-import os
-import re
-import sys
-import mmap
+#!/usr/bin/env python
+#Python 3.6
+import os, re, sys, mmap
 import matplotlib.pyplot as plt
 import numpy as npy
-import seaborn as sns 
+import pdb
 
 #user prompt input
-root_dir = raw_input('')
-keyword = raw_input('')
+root_dir = raw_input('Enter Root dir')
+keyword = raw_input('Enter keyword')
 
 #command line args
 #root_dir = sys.argv[1]
@@ -27,15 +24,15 @@ def FileSearch(curr_dir, exp):
 		if os.path.isfile(filename):
 			#open file, check for matches
 			with open(filename) as f:
-				ans = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READAD)
+				ans = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
 				#increment count if match found
 				if ans.find(exp) != -1:
 					count += 1
-#for line in f:
-#if exp in line:
-#count += 1
-#break
-#store count into array for given subdir
+#				for line in f:
+#					if exp in line:
+#						count += 1
+#						break
+	#store count into array for given subdir
 	results[curr_dir] = count
 	
 	return results[curr_dir]
@@ -46,7 +43,7 @@ output = {}
 for root, dirs, files in os.walk(root_dir):
 	output[root] = FileSearch(root, keyword)
 #output array of all the data
-print output
+print ("output")
 
 
 #output bar graph using matplotlib 
@@ -59,3 +56,4 @@ plt.title('Number of Files with Keyword')
 plt.xlabel('Subdirectory Names')
 plt.ylabel('Count Values')
 plt.show()
+
