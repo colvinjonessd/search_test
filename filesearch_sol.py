@@ -1,15 +1,14 @@
 #!/usr/bin/env python
-#Python 3.6
+#Python 2.7
 #Solomun Colvin-Jones
-
 import os, re, sys, mmap
 import matplotlib.pyplot as plt
 import numpy as npy
 import pdb
 
 #user prompt input
-root_dir = input('Enter Root directory:')
-keyword = input('Enter keyword: ')
+root_dir = raw_input('Enter Root directory:')
+keyword = raw_input('Enter keyword: ')
 
 #command line args
 #root_dir = sys.argv[1]
@@ -25,7 +24,7 @@ def FileSearch(curr_dir, exp):
 		#check to make sure it is a file
 		if os.path.isfile(filename):
 			#open file, check for matches
-			with open(filename) as f:
+			with open(filename, 'r') as f:
 				ans = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
 				#increment count if match found
 				if ans.find(exp) != -1:
@@ -43,9 +42,9 @@ def FileSearch(curr_dir, exp):
 output = {}
 #recursively walk through all dirs & call FileSearch for each subdir
 for root, dirs, files in os.walk(root_dir):
-	output[root] = FileSearch( root, keyword)
+	output[root] = FileSearch(root, keyword)
 #output array of all the data
-print ("output")
+print "output"
 
 
 #output bar graph using matplotlib 

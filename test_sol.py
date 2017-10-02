@@ -7,10 +7,6 @@ import pdb
 import unittest
 from filesearch_sol import filesearch, count_keyword_files, main
 
-# Part 1
-# creates random number of files (no more than 30) in the root dir with random number of keywords
-basename = "filesearch_sol"
-suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
 
 root_dir = ""
 os.chdir("")
@@ -58,8 +54,6 @@ for file in os.listdir(root_dir):
                     Amount_files[2] += 1
                     break
 print("Keyword 1 (^[a-zA-Z]+_TESTResult.*) in ", Amount_files[0], " files present")
-print("Keyword 2 (abc) in ", Amount_files[1], " files present")
-print("Keyword 3 (abcd) in ", Amount_files[2], " files present")
 print('\n')
 input("Press Enter to clear C:\Test\Files directory...")
 files = glob.glob('C:/Test/Files/*')
