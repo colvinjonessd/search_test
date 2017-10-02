@@ -9,7 +9,7 @@ from filesearch_sol import filesearch_sol, count_keyword_files, main
 
 # Part 1
 # creates random number of files (no more than 30) in the root dir with random number of keywords
-basename = ""
+basename = "filesearch_sol"
 suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
 
 root_dir = ""
@@ -32,42 +32,11 @@ while i <= random_files:
             f.write(keyword1)
             q += 1
     i += 1
-# keyword2
-random_files = random.randrange(1, 10)
-print("Amount of files with keyword2 created: ", random_files)
-i = 1
-while i <= random_files:
-    num = str(i)
-    filename = "_".join([basename + "2", num, suffix])
-    with open(filename, 'solo') as f:
-        random_words = random.randrange(1, 20)
-        q = 1
-        while q <= random_words:
-            f.write(keyword2)
-            q += 1
-    i += 1
-# keyword3
-random_files = random.randrange(1, 10)
-print("Amount of files with keyword3 created: ", random_files)
-i = 1
-while i <= random_files:
-    num = str(i)
-    filename = "_".join([basename + "3", num, suffix])
-    with open(filename, 'w') as f:
-        random_words = random.randrange(1, 20)
-        q = 1
-        while q <= random_words:
-            f.write(keyword3)
-            q += 1
-    i += 1
 print("Files with keywords have been created in root dir")
 input("Press Enter to continue...")
 print('\n')
 
-# Part 2
-'''script recursively walks the “root_dir” and detects all the files under that dir contains “keywords”
-and counts the number of files for that sub dir'''
-# Prints list of files in the root dir
+#next
 Keywords_list = ['^[a-zA-Z]+_TESTResult.*', 'abc', 'abcd']
 Amount_files = [0, 0, 0]
 print("List of files in the root dir:")

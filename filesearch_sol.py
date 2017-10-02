@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 #Python 3.6
+#Solomun Colvin-Jones
+
 import os, re, sys, mmap
 import matplotlib.pyplot as plt
 import numpy as npy
 import pdb
 
 #user prompt input
-root_dir = raw_input('Enter Root dir')
-keyword = raw_input('Enter keyword')
+root_dir = raw_input('Enter Root directory:')
+keyword = raw_input('Enter keyword: ')
 
 #command line args
 #root_dir = sys.argv[1]
@@ -48,7 +50,7 @@ print ("output")
 
 #output bar graph using matplotlib 
 graph = npy.arange(len(output))
-plt.bar(graph, output.values(), align='center', width=0.5)
+plt.bar(graph, output.values(), align='center', width=1)
 plt.xticks(graph, output.keys())
 plt.ylim(0, max(output.values())+2)
 
